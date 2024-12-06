@@ -1,0 +1,12 @@
+{
+	"parent": "minecraft:block/cube_all",
+	"textures": {
+		"north": "examplemod:block/crucible_front",
+		"south": "examplemod:block/crucible_side",
+		"east": "examplemod:block/crucible_side",
+		"west": "examplemod:block/crucible_side",
+		"up": "minecraft:block/furnace_top",
+		"down": "minecraft:block/furnace_top",
+		"particle": "examplemod:block/crucible_front"
+	}
+}

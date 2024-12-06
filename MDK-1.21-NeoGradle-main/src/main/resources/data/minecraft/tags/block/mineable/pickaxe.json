@@ -1,0 +1,9 @@
+{
+	"replace": false,
+	"values": [
+		"examplemod:jadeite",
+		"examplemod:jadeite_block",
+		"examplemod:cinnabar_ore",
+		"examplemod:deepslate_cinnabar_ore"
+	]
+}
