@@ -1,0 +1,7 @@
+{
+    "model": {
+        "type": "minecraft:model",
+        // Points to 'assets/examplemod/models/item/example_item.json'
+        "model": "examplemod:item/raw_cinnabar"
+    }
+}

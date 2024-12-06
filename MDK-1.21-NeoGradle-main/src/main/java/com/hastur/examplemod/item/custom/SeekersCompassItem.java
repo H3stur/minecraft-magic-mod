@@ -4,7 +4,7 @@ package com.hastur.examplemod.item.custom;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -22,11 +22,11 @@ public class SeekersCompassItem extends Item {
 	
 	//Should run whenever you right click with the Item
 	@Override
-	public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand){
+	public InteractionResult use(Level pLevel, Player pPlayer, InteractionHand pUsedHand){
 		
 		pPlayer.displayClientMessage(message(), false);
 		
-		return InteractionResultHolder.pass(pPlayer.getItemInHand(pUsedHand));
+		return InteractionResult.PASS;
 	}
 	
 	//Should run every tick the Item is in a players inventory
