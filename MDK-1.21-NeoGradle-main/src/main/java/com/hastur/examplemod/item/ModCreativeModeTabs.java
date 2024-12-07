@@ -45,6 +45,9 @@ public class ModCreativeModeTabs {
 						output.accept(ModBlocks.NULLSTONE);
 						output.accept(ModBlocks.CRUCIBLE);
 						output.accept(ModBlocks.NULLSTONE_UNOBTAINIUM_ORE);
+						output.accept(ModBlocks.GLOOM_LOG);
+						output.accept(ModBlocks.GLOOM_LEAVES);
+						output.accept(ModBlocks.MYSTICAL_GRASS);
 						
 			}).build());
 	

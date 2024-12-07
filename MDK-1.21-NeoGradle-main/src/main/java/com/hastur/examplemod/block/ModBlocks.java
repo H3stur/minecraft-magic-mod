@@ -8,9 +8,11 @@ import com.hastur.examplemod.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
@@ -93,6 +95,36 @@ public class ModBlocks {
 					.sound(SoundType.STONE
 					)));
 	
+	public static final DeferredBlock<Block> GLOOM_LOG = registerBlock("gloom_log",
+			() -> new Block(BlockBehaviour.Properties.of()
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "gloom_log")))
+					.strength(3f)
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.WOOD
+					)));
+	
+	public static final DeferredBlock<Block> MYSTICAL_GRASS = registerBlock("mystical_grass",
+			() -> new FlowerBlock(MobEffects.ABSORPTION, 0, BlockBehaviour.Properties.of()
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "mystical_grass")))
+					.strength(3f)
+					.noCollission()
+					.noOcclusion()
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.STONE
+					)));
+	
+	public static final DeferredBlock<Block> GLOOM_LEAVES = registerBlock("gloom_leaves",
+			() -> new Block(BlockBehaviour.Properties.of()
+					.noOcclusion()
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "gloom_leaves")))
+					.strength(3f)
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.GRASS
+					)));
+	
+	
+	
+	
 	private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
 		DeferredBlock<T> toReturn = BLOCKS.register(name, block);
 		registerBlockItem(name,toReturn);
@@ -101,7 +133,7 @@ public class ModBlocks {
 	
 	
 	private static<T extends Block> void registerBlockItem(String name, DeferredBlock<T> block) {
-		ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()
+		ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().useBlockDescriptionPrefix()
 				.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, name)))));
 	}
 	

@@ -1,0 +1,12 @@
+{
+	"parent": "minecraft:block/cube_all",
+	"textures": {
+		"north": "examplemod:block/gloom_log",
+		"south": "examplemod:block/gloom_log",
+		"east": "examplemod:block/gloom_log",
+		"west": "examplemod:block/gloom_log",
+		"up": "examplemod:block/gloom_log_top",
+		"down": "examplemod:block/gloom_log_top",
+		"particle": "examplemod:block/gloom_log"
+	}
+}

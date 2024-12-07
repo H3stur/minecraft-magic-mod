@@ -16,34 +16,42 @@ public class ModItems {
 	
 	public static final DeferredItem<Item> MERCURY = ITEMS.register("mercury",
 			() -> new Item(new Item.Properties()
+					.useItemDescriptionPrefix()
 					.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "mercury")))));
 	
 	public static final DeferredItem<Item> STARLIGHT_SHARD = ITEMS.register("starlight_shard",
 			() -> new Item(new Item.Properties()
+					.useItemDescriptionPrefix()
 					.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "starlight_shard")))));
 	
 	public static final DeferredItem<Item> RAW_CINNABAR = ITEMS.register("raw_cinnabar",
 			() -> new Item(new Item.Properties()
+					.useItemDescriptionPrefix()
 					.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "raw_cinnabar")))));
 	
 	public static final DeferredItem<Item> ALCHEMICAL_MEMOIR = ITEMS.register("alchemical_memoir",
 			() -> new Item(new Item.Properties()
+					.useItemDescriptionPrefix()
 					.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "alchemical_memoir")))));
 	
 	public static final DeferredItem<Item> GOLD_AMALGAM = ITEMS.register("gold_amalgam",
 			() -> new Item(new Item.Properties()
+					.useItemDescriptionPrefix()
 					.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "gold_amalgam")))));
 	
 	public static final DeferredItem<Item> IRON_AMALGAM = ITEMS.register("iron_amalgam",
 			() -> new Item(new Item.Properties()
+					.useItemDescriptionPrefix()
 					.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "iron_amalgam")))));
 	
 	public static final DeferredItem<Item> COPPER_AMALGAM = ITEMS.register("copper_amalgam",
 			() -> new Item(new Item.Properties()
+					.useItemDescriptionPrefix()
 					.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "copper_amalgam")))));
 	
 	public static final DeferredItem<Item> SEEKERS_COMPASS = ITEMS.register("seekers_compass",
 			() -> new SeekersCompassItem(new SeekersCompassItem.Properties()
+					.useItemDescriptionPrefix()
 					.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "seekers_compass")))));
 	
 	

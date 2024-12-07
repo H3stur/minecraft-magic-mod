@@ -17,6 +17,9 @@
 	"block.examplemod.nullstone": "Nullstone",
 	"block.examplemod.crucible": "Crucible",
 	"block.examplemod.nullstone_unobtainium_ore": "Nullstone Unobtainium Ore",
+	"block.examplemod.gloom_log": "Gloom Log",
+	"block.examplemod.gloom_leaves": "Gloom Leaves",
+	"block.examplemod.mystical_grass": "Mystical Grass",
 	
 	"creativetab.examplemod.praeconis_items": "Praeconis Items",
 	"creativetab.examplemod.praeconis_blocks": "Praeconis Blocks"
