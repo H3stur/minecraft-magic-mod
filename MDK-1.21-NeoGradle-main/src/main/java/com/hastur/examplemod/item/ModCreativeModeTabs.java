@@ -47,6 +47,9 @@ public class ModCreativeModeTabs {
 						output.accept(ModBlocks.NULLSTONE_UNOBTAINIUM_ORE);
 						output.accept(ModBlocks.GLOOM_LOG);
 						output.accept(ModBlocks.GLOOM_LEAVES);
+						output.accept(ModBlocks.CERULEA_LOG);
+						output.accept(ModBlocks.CERULEA_PLANKS);
+						output.accept(ModBlocks.CERULEA_LEAVES);
 						output.accept(ModBlocks.MYSTICAL_GRASS);
 						
 			}).build());

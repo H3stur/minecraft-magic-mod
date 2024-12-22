@@ -19,7 +19,10 @@
 	"block.examplemod.nullstone_unobtainium_ore": "Nullstone Unobtainium Ore",
 	"block.examplemod.gloom_log": "Gloom Log",
 	"block.examplemod.gloom_leaves": "Gloom Leaves",
+	"block.examplemod.cerulea_log": "Cerulea Log",
+	"block.examplemod.cerulea_leaves": "Cerulea Leaves",
 	"block.examplemod.mystical_grass": "Mystical Grass",
+	"block.examplemod.cerulea_planks": "Cerulea Planks",
 	
 	"creativetab.examplemod.praeconis_items": "Praeconis Items",
 	"creativetab.examplemod.praeconis_blocks": "Praeconis Blocks"

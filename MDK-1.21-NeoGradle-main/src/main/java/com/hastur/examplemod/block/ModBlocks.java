@@ -122,6 +122,36 @@ public class ModBlocks {
 					.sound(SoundType.GRASS
 					)));
 	
+	public static final DeferredBlock<Block> CERULEA_LEAVES = registerBlock("cerulea_leaves",
+			() -> new Block(BlockBehaviour.Properties.of()
+					.noOcclusion()
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "cerulea_leaves")))
+					.strength(3f)
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.GRASS
+					)));
+	
+	public static final DeferredBlock<Block> CERULEA_LOG = registerBlock("cerulea_log",
+			() -> new Block(BlockBehaviour.Properties.of()
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "cerulea_log")))
+					.strength(3f)
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.WOOD
+					)));
+	
+	public static final DeferredBlock<Block> CERULEA_PLANKS = registerBlock("cerulea_planks",
+			() -> new Block(BlockBehaviour.Properties.of()
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "cerulea_planks")))
+					.strength(3f)
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.WOOD
+					)));
+	
+	
+	
+	
+	
+	
 	
 	
 	
