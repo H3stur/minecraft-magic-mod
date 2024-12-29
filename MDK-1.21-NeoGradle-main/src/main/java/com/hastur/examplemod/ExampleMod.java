@@ -7,10 +7,10 @@ import com.hastur.examplemod.item.ModCreativeModeTabs;
 import com.hastur.examplemod.item.ModItems;
 import com.hastur.examplemod.worldgen.ModConfiguredFeatures;
 import com.hastur.examplemod.worldgen.ModPlacedFeatures;
-import com.hastur.examplemod.worldgen.biome.ModBiomes;
-import com.hastur.examplemod.worldgen.biome.ModOverworldRegion;
-import com.hastur.examplemod.worldgen.biome.ModTerrablender;
-import com.hastur.examplemod.worldgen.biome.surface.ModSurfaceRules;
+//import com.hastur.examplemod.worldgen.biome.ModBiomes;
+//import com.hastur.examplemod.worldgen.biome.ModOverworldRegion;
+//import com.hastur.examplemod.worldgen.biome.ModTerrablender;
+//import com.hastur.examplemod.worldgen.biome.surface.ModSurfaceRules;
 import com.mojang.logging.LogUtils;
 
 import net.minecraft.client.Minecraft;
@@ -73,7 +73,7 @@ public class ExampleMod
         ModBlocks.register(modEventBus);
         
         
-        ModTerrablender.registerBiomes();
+        //ModTerrablender.registerBiomes();
         
         
 
@@ -89,10 +89,10 @@ public class ExampleMod
     	 event.enqueueWork(() ->
          {
              // Given we only add two biomes, we should keep our weight relatively low.
-             Regions.register(new ModOverworldRegion(ResourceLocation.fromNamespaceAndPath(MODID, "overworld"), 2));
+             //Regions.register(new ModOverworldRegion(ResourceLocation.fromNamespaceAndPath(MODID, "overworld"), 2));
 
              // Register our surface rules
-             SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MODID, ModSurfaceRules.makeRules());
+             //SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MODID, ModSurfaceRules.makeRules());
          });
     }
 
@@ -115,6 +115,10 @@ public class ExampleMod
 
     }
 
+    
+    
+    
+    
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents

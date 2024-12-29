@@ -1,3 +1,4 @@
+
 package com.hastur.examplemod.worldgen.biome.surface;
 
 import com.hastur.examplemod.block.ModBlocks;

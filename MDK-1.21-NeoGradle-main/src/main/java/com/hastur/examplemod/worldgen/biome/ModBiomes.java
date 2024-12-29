@@ -1,3 +1,4 @@
+
 package com.hastur.examplemod.worldgen.biome;
 
 import com.hastur.examplemod.ExampleMod;

@@ -1,0 +1,7 @@
+// 1.21.4	2024-12-29T02:38:55.893966	MOD NAME recipes
+483c8c411922d091732435191064282dad41886c data/examplemod/advancement/recipes/building_blocks/jadeite_block.json
+fd057ee18deec3afec7dd6f5ec0a4cefda8f66a6 data/examplemod/advancement/recipes/building_blocks/raw_cinnabar_block.json
+eb398b2c4dec18aed7666abd802c6cc57eb2b349 data/examplemod/advancement/recipes/misc/raw_cinnabar.json
+bbae2cde05ef893e37b864cbc3d14869da681363 data/examplemod/recipe/jadeite_block.json
+b6e0cfe3bcc2be801a727ed9934fe943178d49f4 data/examplemod/recipe/raw_cinnabar.json
+19f6210548fbfd4d8aa9b5cb59929ec392aa311f data/examplemod/recipe/raw_cinnabar_block.json

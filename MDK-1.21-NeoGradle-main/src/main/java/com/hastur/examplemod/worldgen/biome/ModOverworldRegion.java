@@ -1,3 +1,4 @@
+
 package com.hastur.examplemod.worldgen.biome;
 
 import com.mojang.datafixers.util.Pair;

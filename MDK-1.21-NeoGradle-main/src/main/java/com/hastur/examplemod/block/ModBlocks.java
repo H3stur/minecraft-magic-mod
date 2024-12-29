@@ -12,7 +12,9 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
@@ -27,6 +29,7 @@ public class ModBlocks {
 	public static final DeferredBlock<Block> CINNABAR_ORE = registerBlock("cinnabar_ore",
 			() -> new Block(BlockBehaviour.Properties.of()
 					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "cinnabar_ore")))
+					.strength(2.5f)
 					.requiresCorrectToolForDrops()
 					.sound(SoundType.STONE
 					)));
@@ -96,7 +99,7 @@ public class ModBlocks {
 					)));
 	
 	public static final DeferredBlock<Block> GLOOM_LOG = registerBlock("gloom_log",
-			() -> new Block(BlockBehaviour.Properties.of()
+			() -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
 					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "gloom_log")))
 					.strength(3f)
 					.requiresCorrectToolForDrops()
@@ -111,6 +114,16 @@ public class ModBlocks {
 					.noOcclusion()
 					.requiresCorrectToolForDrops()
 					.sound(SoundType.STONE
+					)));
+	
+	public static final DeferredBlock<Block> CERULEA_SAPLING = registerBlock("cerulea_sapling",
+			() -> new FlowerBlock(MobEffects.ABSORPTION, 0, BlockBehaviour.Properties.of()
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "cerulea_sapling")))
+					.strength(3f)
+					.noCollission()
+					.noOcclusion()
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.GRASS
 					)));
 	
 	public static final DeferredBlock<Block> GLOOM_LEAVES = registerBlock("gloom_leaves",
@@ -132,7 +145,7 @@ public class ModBlocks {
 					)));
 	
 	public static final DeferredBlock<Block> CERULEA_LOG = registerBlock("cerulea_log",
-			() -> new Block(BlockBehaviour.Properties.of()
+			() -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
 					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "cerulea_log")))
 					.strength(3f)
 					.requiresCorrectToolForDrops()
