@@ -7,6 +7,7 @@ import com.hastur.examplemod.item.ModCreativeModeTabs;
 import com.hastur.examplemod.item.ModItems;
 import com.hastur.examplemod.worldgen.ModConfiguredFeatures;
 import com.hastur.examplemod.worldgen.ModPlacedFeatures;
+import com.hastur.examplemod.worldgen.biome.ModTerrablender;
 //import com.hastur.examplemod.worldgen.biome.ModBiomes;
 //import com.hastur.examplemod.worldgen.biome.ModOverworldRegion;
 //import com.hastur.examplemod.worldgen.biome.ModTerrablender;

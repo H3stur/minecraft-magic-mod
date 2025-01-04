@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "examplemod:block/cerulea_planks",
+    "side": "examplemod:block/cerulea_planks",
+    "top": "examplemod:block/cerulea_planks"
+  }
+}

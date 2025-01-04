@@ -4,6 +4,7 @@ import java.util.function.Supplier;
 
 import com.hastur.examplemod.ExampleMod;
 import com.hastur.examplemod.item.ModItems;
+import com.hastur.examplemod.worldgen.tree.ModTreeGrowers;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -15,7 +16,10 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -50,6 +54,14 @@ public class ModBlocks {
 					.sound(SoundType.STONE
 					)));
 	
+	public static final DeferredBlock<Block> ACTIVATED_JADEITE = registerBlock("activated_jadeite",
+			() -> new Block(BlockBehaviour.Properties.of()
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "activated_jadeite")))
+					.strength(3f)
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.STONE
+					)));
+	
 	public static final DeferredBlock<Block> JADEITE_BLOCK = registerBlock("jadeite_block",
 			() -> new Block(BlockBehaviour.Properties.of()
 					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "jadeite_block")))
@@ -58,9 +70,25 @@ public class ModBlocks {
 					.sound(SoundType.STONE
 					)));
 	
+	public static final DeferredBlock<Block> ACTIVATED_JADEITE_BLOCK = registerBlock("activated_jadeite_block",
+			() -> new Block(BlockBehaviour.Properties.of()
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "activated_jadeite_block")))
+					.strength(3f)
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.STONE
+					)));
+	
 	public static final DeferredBlock<Block> JADEITE_BRICKS = registerBlock("jadeite_bricks",
 			() -> new Block(BlockBehaviour.Properties.of()
 					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "jadeite_bricks")))
+					.strength(3f)
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.STONE
+					)));
+	
+	public static final DeferredBlock<Block> ACTIVATED_JADEITE_BRICKS = registerBlock("activated_jadeite_bricks",
+			() -> new Block(BlockBehaviour.Properties.of()
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "activated_jadeite_bricks")))
 					.strength(3f)
 					.requiresCorrectToolForDrops()
 					.sound(SoundType.STONE
@@ -98,6 +126,12 @@ public class ModBlocks {
 					.sound(SoundType.STONE
 					)));
 	
+	
+	
+	
+	
+	
+	
 	public static final DeferredBlock<Block> GLOOM_LOG = registerBlock("gloom_log",
 			() -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
 					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "gloom_log")))
@@ -105,6 +139,60 @@ public class ModBlocks {
 					.requiresCorrectToolForDrops()
 					.sound(SoundType.WOOD
 					)));
+	
+	public static final DeferredBlock<Block> GLOOM_WOOD = registerBlock("gloom_wood",
+			() -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "gloom_wood")))
+					.strength(3f)
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.WOOD
+					)));
+	
+	public static final DeferredBlock<Block> STRIPPED_GLOOM_LOG = registerBlock("stripped_gloom_log",
+			() -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "stripped_gloom_log")))
+					.strength(3f)
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.WOOD
+					)));
+	
+	public static final DeferredBlock<Block> STRIPPED_GLOOM_WOOD = registerBlock("stripped_gloom_wood",
+			() -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "stripped_gloom_wood")))
+					.strength(3f)
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.WOOD
+					)));
+	
+	public static final DeferredBlock<Block> GLOOM_PLANKS = registerBlock("gloom_planks",
+			() -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "gloom_planks")))
+					.strength(3f)
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.WOOD
+					)));
+	
+	public static final DeferredBlock<Block> GLOOM_STAIRS = registerBlock("gloom_stairs",
+			() -> new StairBlock(ModBlocks.GLOOM_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS)
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "gloom_stairs")))
+					.strength(3f)
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.WOOD
+					)));
+	
+	public static final DeferredBlock<Block> GLOOM_SLAB = registerBlock("gloom_slab",
+			() -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB)
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "gloom_slab")))
+					.strength(3f)
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.WOOD
+					)));
+	
+	
+	
+	
+	
+	
 	
 	public static final DeferredBlock<Block> MYSTICAL_GRASS = registerBlock("mystical_grass",
 			() -> new FlowerBlock(MobEffects.ABSORPTION, 0, BlockBehaviour.Properties.of()
@@ -117,12 +205,11 @@ public class ModBlocks {
 					)));
 	
 	public static final DeferredBlock<Block> CERULEA_SAPLING = registerBlock("cerulea_sapling",
-			() -> new FlowerBlock(MobEffects.ABSORPTION, 0, BlockBehaviour.Properties.of()
+			() -> new SaplingBlock(ModTreeGrowers.CERULEA,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)
 					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "cerulea_sapling")))
-					.strength(3f)
+					.strength(1f)
 					.noCollission()
 					.noOcclusion()
-					.requiresCorrectToolForDrops()
 					.sound(SoundType.GRASS
 					)));
 	
@@ -152,6 +239,14 @@ public class ModBlocks {
 					.sound(SoundType.WOOD
 					)));
 	
+	public static final DeferredBlock<Block> CERULEA_WOOD = registerBlock("cerulea_wood",
+			() -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "cerulea_wood")))
+					.strength(3f)
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.WOOD
+					)));
+	
 	public static final DeferredBlock<Block> CERULEA_PLANKS = registerBlock("cerulea_planks",
 			() -> new Block(BlockBehaviour.Properties.of()
 					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "cerulea_planks")))
@@ -160,11 +255,21 @@ public class ModBlocks {
 					.sound(SoundType.WOOD
 					)));
 	
+	public static final DeferredBlock<Block> CERULEA_STAIRS = registerBlock("cerulea_stairs",
+			() -> new StairBlock(ModBlocks.CERULEA_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS)
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "cerulea_stairs")))
+					.strength(3f)
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.WOOD
+					)));
 	
-	
-	
-	
-	
+	public static final DeferredBlock<Block> CERULEA_SLAB = registerBlock("cerulea_slab",
+			() -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SLAB)
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "cerulea_slab")))
+					.strength(3f)
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.WOOD
+					)));
 	
 	
 	

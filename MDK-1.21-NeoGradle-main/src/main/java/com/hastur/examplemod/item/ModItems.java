@@ -19,6 +19,16 @@ public class ModItems {
 					.useItemDescriptionPrefix()
 					.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "mercury")))));
 	
+	public static final DeferredItem<Item> ACTIVATED_JADE_SHARD = ITEMS.register("activated_jade_shard",
+			() -> new Item(new Item.Properties()
+					.useItemDescriptionPrefix()
+					.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "activated_jade_shard")))));
+	
+	public static final DeferredItem<Item> JADE_SHARD = ITEMS.register("jade_shard",
+			() -> new Item(new Item.Properties()
+					.useItemDescriptionPrefix()
+					.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "jade_shard")))));
+	
 	public static final DeferredItem<Item> STARLIGHT_SHARD = ITEMS.register("starlight_shard",
 			() -> new Item(new Item.Properties()
 					.useItemDescriptionPrefix()

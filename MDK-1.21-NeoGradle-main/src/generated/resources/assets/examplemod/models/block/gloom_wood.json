@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "examplemod:block/gloom_log",
+    "side": "examplemod:block/gloom_log"
+  }
+}

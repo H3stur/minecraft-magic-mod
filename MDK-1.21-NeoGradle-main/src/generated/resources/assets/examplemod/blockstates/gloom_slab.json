@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "examplemod:block/gloom_slab"
+    },
+    "type=double": {
+      "model": "examplemod:block/gloom_planks"
+    },
+    "type=top": {
+      "model": "examplemod:block/gloom_slab_top"
+    }
+  }
+}

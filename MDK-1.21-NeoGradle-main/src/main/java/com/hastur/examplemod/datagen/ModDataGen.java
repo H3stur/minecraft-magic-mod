@@ -3,6 +3,7 @@ package com.hastur.examplemod.datagen;
 import java.util.concurrent.CompletableFuture;
 
 import com.hastur.examplemod.ExampleMod;
+import com.hastur.examplemod.worldgen.ModConfiguredFeatures;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -27,6 +28,7 @@ public class ModDataGen {
 		
 		event.addProvider(new ModModelProvider(output));
 		event.addProvider(new ModRecipeProvider.Runner(output, event.getLookupProvider()));
+		event.addProvider(new ModWorldGenProvider(output,lookupProvider));
 	}
 }
 

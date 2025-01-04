@@ -34,8 +34,7 @@
   "features": [
     [],
     [
-      "minecraft:lake_lava_underground",
-      "minecraft:lake_lava_surface"
+      "minecraft:lake_lava_underground"
     ],
     [
       "minecraft:amethyst_geode"
@@ -75,23 +74,22 @@
       "minecraft:underwater_magma",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
+	  "examplemod:cinnabar_ore_placed",
       "minecraft:disk_gravel"
     ],
     [],
     [
-      "minecraft:spring_water",
-      "minecraft:spring_lava"
+      "minecraft:spring_water"
     ],
     [
       "minecraft:glow_lichen",
       "minecraft:forest_flowers",
-      "examplemod:cerulea_trees",
+      "examplemod:cerulea",
       "minecraft:flower_default",
       "minecraft:patch_grass_forest",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin"
     ],
     [
       "minecraft:freeze_top_layer"

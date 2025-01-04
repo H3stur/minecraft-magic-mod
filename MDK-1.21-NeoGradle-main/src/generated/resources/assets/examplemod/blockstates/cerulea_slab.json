@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "examplemod:block/cerulea_slab"
+    },
+    "type=double": {
+      "model": "examplemod:block/cerulea_planks"
+    },
+    "type=top": {
+      "model": "examplemod:block/cerulea_slab_top"
+    }
+  }
+}
