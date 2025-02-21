@@ -17,6 +17,7 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.BlockPileConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.SimpleRandomFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SpikeConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
@@ -31,6 +32,8 @@ public class ModConfiguredFeatures {
 	public static final ResourceKey<ConfiguredFeature<?,?>> OVERWORLD_CINNABAR_ORE_KEY = registerKey("cinnabar_ore");
 	
 	public static final ResourceKey<ConfiguredFeature<?, ?>> CERULEA_KEY = registerKey("cerulea");
+	
+	public static final ResourceKey<ConfiguredFeature<?,?>> CERULEA_ROCKS_KEY = registerKey("cerulea_rocks");
 	
 	public static void bootstrap(BootstrapContext<ConfiguredFeature<?,?>> context) {
 		RuleTest stoneReplaceable = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
@@ -50,7 +53,6 @@ public class ModConfiguredFeatures {
 						new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(3),3),
 						new TwoLayersFeatureSize(1,0,2))
 						.build());
-		
 	}
 	
 	

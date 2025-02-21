@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SaplingBlock;
+import net.minecraft.world.level.block.SeagrassBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
@@ -41,6 +42,14 @@ public class ModBlocks {
 	public static final DeferredBlock<Block> DEEPSLATE_CINNABAR_ORE = registerBlock("deepslate_cinnabar_ore",
 			() -> new Block(BlockBehaviour.Properties.of()
 					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "deepslate_cinnabar_ore")))
+					.strength(3f)
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.STONE
+					)));
+	
+	public static final DeferredBlock<Block> LIMESTONE = registerBlock("limestone",
+			() -> new Block(BlockBehaviour.Properties.of()
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "limestone")))
 					.strength(3f)
 					.requiresCorrectToolForDrops()
 					.sound(SoundType.STONE
@@ -126,7 +135,13 @@ public class ModBlocks {
 					.sound(SoundType.STONE
 					)));
 	
-	
+	public static final DeferredBlock<Block> BLUE_CATTAIL = registerBlock("blue_cattail",
+			() -> new SeagrassBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SEAGRASS)
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "blue_cattail")))
+					.strength(3f)
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.STONE
+					)));
 	
 	
 	

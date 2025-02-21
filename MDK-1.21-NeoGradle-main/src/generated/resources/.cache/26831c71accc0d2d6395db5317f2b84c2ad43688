@@ -1,7 +1,11 @@
-// 1.21.4	2024-12-29T02:38:55.893966	MOD NAME recipes
+// 1.21.4	2025-01-04T01:47:03.6669677	MOD NAME recipes
 483c8c411922d091732435191064282dad41886c data/examplemod/advancement/recipes/building_blocks/jadeite_block.json
+3149c4577d07f6576bd93a123591a06aeb268f6b data/examplemod/advancement/recipes/building_blocks/jadeite_bricks.json
 fd057ee18deec3afec7dd6f5ec0a4cefda8f66a6 data/examplemod/advancement/recipes/building_blocks/raw_cinnabar_block.json
+d1aaa6721957954481c6d78a95cf99d1a1f1a3ed data/examplemod/advancement/recipes/misc/cerulea_planks.json
 eb398b2c4dec18aed7666abd802c6cc57eb2b349 data/examplemod/advancement/recipes/misc/raw_cinnabar.json
+d892c7a0177690ddda011fdce368f5b4a666696d data/examplemod/recipe/cerulea_planks.json
 bbae2cde05ef893e37b864cbc3d14869da681363 data/examplemod/recipe/jadeite_block.json
+f498ede41454d597ed60600e0f3f1081eb05cc98 data/examplemod/recipe/jadeite_bricks.json
 b6e0cfe3bcc2be801a727ed9934fe943178d49f4 data/examplemod/recipe/raw_cinnabar.json
 19f6210548fbfd4d8aa9b5cb59929ec392aa311f data/examplemod/recipe/raw_cinnabar_block.json

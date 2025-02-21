@@ -4,37 +4,27 @@
     "minecraft:cave_extra_underground",
     "minecraft:canyon"
   ],
-  "downfall": 0.6,
+  "downfall": 0.8,
   "effects": {
-    "fog_color": 12638463,
-    "grass_color": 7311054,
-    "foliage_color": 4544698,
+    "fog_color": 7517672,
+    "foliage_color": 2706355,
+    "grass_color": 6858196,
     "mood_sound": {
       "block_search_extent": 8,
-      "offset": 2,
+      "offset": 2.0,
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000
     },
-    "music": [
-      {
-        "data": {
-          "max_delay": 24000,
-          "min_delay": 12000,
-          "replace_current_music": false,
-          "sound": "minecraft:music.overworld.forest"
-        },
-        "weight": 1
-      }
-    ],
-    "music_volume": 1,
-    "sky_color": 5799893,
-    "water_color": 4159204,
-    "water_fog_color": 329011
+    "music_volume": 1.0,
+    "sky_color": 9748215,
+    "water_color": 5199305,
+    "water_fog_color": 5199305
   },
   "features": [
     [],
     [
-      "minecraft:lake_lava_underground"
+      "minecraft:lake_lava_underground",
+      "minecraft:lake_lava_surface"
     ],
     [
       "minecraft:amethyst_geode"
@@ -74,22 +64,21 @@
       "minecraft:underwater_magma",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
-	  "examplemod:cinnabar_ore_placed",
       "minecraft:disk_gravel"
     ],
     [],
     [
-      "minecraft:spring_water"
+      "minecraft:spring_water",
+      "minecraft:spring_lava"
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:forest_flowers",
-      "examplemod:cerulea",
       "minecraft:flower_default",
-      "minecraft:patch_grass_forest",
+      "minecraft:patch_grass_badlands",
+      "minecraft:patch_tall_grass_2",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
-      "minecraft:patch_sugar_cane",
+      "examplemod:cerulea_tree_placed"
     ],
     [
       "minecraft:freeze_top_layer"
@@ -130,6 +119,18 @@
         "type": "minecraft:cow",
         "maxCount": 4,
         "minCount": 4,
+        "weight": 8
+      },
+      {
+        "type": "minecraft:wolf",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 5
+      },
+      {
+        "type": "minecraft:fox",
+        "maxCount": 4,
+        "minCount": 2,
         "weight": 8
       }
     ],
@@ -195,5 +196,5 @@
     "water_ambient": [],
     "water_creature": []
   },
-  "temperature": 0.6
+  "temperature": 0.7
 }

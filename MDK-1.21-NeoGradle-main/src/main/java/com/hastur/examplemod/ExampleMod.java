@@ -7,7 +7,7 @@ import com.hastur.examplemod.item.ModCreativeModeTabs;
 import com.hastur.examplemod.item.ModItems;
 import com.hastur.examplemod.worldgen.ModConfiguredFeatures;
 import com.hastur.examplemod.worldgen.ModPlacedFeatures;
-import com.hastur.examplemod.worldgen.biome.ModTerrablender;
+import com.hastur.examplemod.worldgen.biome.ModBiomes;
 //import com.hastur.examplemod.worldgen.biome.ModBiomes;
 //import com.hastur.examplemod.worldgen.biome.ModOverworldRegion;
 //import com.hastur.examplemod.worldgen.biome.ModTerrablender;
@@ -74,7 +74,7 @@ public class ExampleMod
         ModBlocks.register(modEventBus);
         
         
-        //ModTerrablender.registerBiomes();
+        //ModBiomes.bootstrapBiomes(modEventBus);
         
         
 
@@ -89,8 +89,7 @@ public class ExampleMod
     {
     	 event.enqueueWork(() ->
          {
-             // Given we only add two biomes, we should keep our weight relatively low.
-             //Regions.register(new ModOverworldRegion(ResourceLocation.fromNamespaceAndPath(MODID, "overworld"), 2));
+             ModBiomes.setupTerraBlender();
 
              // Register our surface rules
              //SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MODID, ModSurfaceRules.makeRules());

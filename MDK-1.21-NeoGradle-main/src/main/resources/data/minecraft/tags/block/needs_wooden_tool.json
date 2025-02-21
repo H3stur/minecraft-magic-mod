@@ -1,14 +1,12 @@
 {
 	"replace": false,
 	"values": [
-		"examplemod:jadeite",
 		"examplemod:jadeite_block",
 		"examplemod:jadeite_bricks",
-		"examplemod:activated_jadeite",
+		"examplemod:jadeite",
 		"examplemod:activated_jadeite_block",
 		"examplemod:activated_jadeite_bricks",
-		"examplemod:cinnabar_ore",
-		"examplemod:deepslate_cinnabar_ore",
-		"examplemod:raw_cinnabar_block"
+		"examplemod:activated_jadeite",
+		"examplemod:cerulea_log"
 	]
 }

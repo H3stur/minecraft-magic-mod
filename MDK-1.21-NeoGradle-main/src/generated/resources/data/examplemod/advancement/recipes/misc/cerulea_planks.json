@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cerulea_log": {
+      "conditions": {
+        "items": [
+          {
+            "items": "examplemod:cerulea_planks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "examplemod:cerulea_planks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cerulea_log"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "examplemod:cerulea_planks"
+    ]
+  }
+}

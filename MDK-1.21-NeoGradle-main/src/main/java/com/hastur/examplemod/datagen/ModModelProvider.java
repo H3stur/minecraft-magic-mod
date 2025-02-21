@@ -44,6 +44,8 @@ public class ModModelProvider extends ModelProvider{
 		blockModels.createTrivialBlock(ModBlocks.ACTIVATED_JADEITE_BRICKS.get(), TexturedModel.CUBE);
 		blockModels.createTrivialBlock(ModBlocks.ACTIVATED_JADEITE_BLOCK.get(), TexturedModel.CUBE);
 		
+		blockModels.createTrivialBlock(ModBlocks.LIMESTONE.get(), TexturedModel.CUBE);
+		
 		blockModels.createTrivialBlock(ModBlocks.CINNABAR_ORE.get(), TexturedModel.CUBE);
 		blockModels.createTrivialBlock(ModBlocks.DEEPSLATE_CINNABAR_ORE.get(), TexturedModel.CUBE);
 		blockModels.createTrivialBlock(ModBlocks.RAW_CINNABAR_BLOCK.get(), TexturedModel.CUBE);
@@ -88,6 +90,11 @@ public class ModModelProvider extends ModelProvider{
 				.renderType("cutout")
 				.build()
 				.create(ModBlocks.MYSTICAL_GRASS.get(), TextureMapping.cross(ModBlocks.MYSTICAL_GRASS.get()), blockModels.modelOutput))
+		);
+		blockModels.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(ModBlocks.BLUE_CATTAIL.get(), ModelTemplates.CROSS.extend()
+				.renderType("cutout")
+				.build()
+				.create(ModBlocks.BLUE_CATTAIL.get(), TextureMapping.cross(ModBlocks.BLUE_CATTAIL.get()), blockModels.modelOutput))
 		);
 		
 		

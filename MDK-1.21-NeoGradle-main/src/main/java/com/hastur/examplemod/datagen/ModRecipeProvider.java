@@ -47,9 +47,22 @@ public class ModRecipeProvider extends RecipeProvider{
         .unlockedBy(getHasName(ModBlocks.JADEITE), has(ModBlocks.JADEITE))
         .save(output);
         
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.BUILDING_BLOCKS, ModBlocks.JADEITE_BRICKS.get(),4)
+        .pattern("AA ")
+        .pattern("AA ")
+        .pattern("   ")
+        .define('A', ModBlocks.JADEITE_BLOCK)
+        .unlockedBy(getHasName(ModBlocks.JADEITE_BLOCK), has(ModBlocks.JADEITE_BLOCK))
+        .save(output);
+        
         ShapelessRecipeBuilder.shapeless(items, RecipeCategory.MISC, ModItems.RAW_CINNABAR, 9)
         .requires(ModBlocks.RAW_CINNABAR_BLOCK)
         .unlockedBy(getHasName(ModItems.RAW_CINNABAR), has(ModBlocks.RAW_CINNABAR_BLOCK))
+        .save(output);
+        
+        ShapelessRecipeBuilder.shapeless(items, RecipeCategory.MISC, ModBlocks.CERULEA_PLANKS, 4)
+        .requires(ModBlocks.CERULEA_LOG)
+        .unlockedBy(getHasName(ModBlocks.CERULEA_LOG), has(ModBlocks.CERULEA_PLANKS))
         .save(output);
         
 	}

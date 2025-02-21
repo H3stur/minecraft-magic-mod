@@ -40,6 +40,7 @@ public class ModCreativeModeTabs {
 					.displayItems((itemDisplayParameters, output) -> {
 						output.accept(ModBlocks.CINNABAR_ORE);
 						output.accept(ModBlocks.DEEPSLATE_CINNABAR_ORE);
+						output.accept(ModBlocks.LIMESTONE);
 						output.accept(ModBlocks.JADEITE);
 						output.accept(ModBlocks.JADEITE_BLOCK);
 						output.accept(ModBlocks.JADEITE_BRICKS);
@@ -50,6 +51,8 @@ public class ModCreativeModeTabs {
 						output.accept(ModBlocks.NULLSTONE);
 						output.accept(ModBlocks.CRUCIBLE);
 						output.accept(ModBlocks.NULLSTONE_UNOBTAINIUM_ORE);
+						
+						output.accept(ModBlocks.BLUE_CATTAIL);
 						
 						output.accept(ModBlocks.GLOOM_LOG);
 						output.accept(ModBlocks.GLOOM_LEAVES);
