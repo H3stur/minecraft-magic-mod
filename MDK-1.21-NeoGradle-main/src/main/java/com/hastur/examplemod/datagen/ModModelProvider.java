@@ -1,24 +1,20 @@
 package com.hastur.examplemod.datagen;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Stream;
 
 import com.hastur.examplemod.ExampleMod;
 import com.hastur.examplemod.block.ModBlocks;
 import com.hastur.examplemod.item.ModItems;
 
+import com.sun.jna.platform.win32.Variant;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
-import net.minecraft.client.data.models.model.ModelTemplate;
-import net.minecraft.client.data.models.model.ModelTemplates;
-import net.minecraft.client.data.models.model.TextureMapping;
-import net.minecraft.client.data.models.model.TextureSlot;
-import net.minecraft.client.data.models.model.TexturedModel;
-import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.data.models.MultiVariant;
+import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
+import net.minecraft.client.data.models.blockstates.PropertyDispatch;
+import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.renderer.item.BlockModelWrapper;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -26,6 +22,9 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.client.model.generators.loaders.CompositeModelBuilder;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 
@@ -37,35 +36,41 @@ public class ModModelProvider extends ModelProvider{
 	@Override
 	protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels) {
 		blockModels.createTrivialBlock(ModBlocks.JADEITE.get(), TexturedModel.CUBE);
-		blockModels.createTrivialBlock(ModBlocks.JADEITE_BRICKS.get(), TexturedModel.CUBE);
-		blockModels.createTrivialBlock(ModBlocks.JADEITE_BLOCK.get(), TexturedModel.CUBE);
+		blockWithSlab(blockModels, ModBlocks.JADEITE_BRICKS.get(), ModBlocks.JADEITE_BRICKS_SLAB.get());
+		blockWithSlab(blockModels, ModBlocks.JADEITE_BLOCK.get(), ModBlocks.JADEITE_BLOCK_SLAB.get());
+		stairsBlock(blockModels, ModBlocks.JADEITE_BRICK_STAIRS.get(), ModBlocks.JADEITE_BRICKS.get());
+		stairsBlock(blockModels, ModBlocks.JADEITE_BLOCK_STAIRS.get(), ModBlocks.JADEITE_BLOCK.get());
 		
 		blockModels.createTrivialBlock(ModBlocks.ACTIVATED_JADEITE.get(), TexturedModel.CUBE);
 		blockModels.createTrivialBlock(ModBlocks.ACTIVATED_JADEITE_BRICKS.get(), TexturedModel.CUBE);
 		blockModels.createTrivialBlock(ModBlocks.ACTIVATED_JADEITE_BLOCK.get(), TexturedModel.CUBE);
 		
 		blockModels.createTrivialBlock(ModBlocks.LIMESTONE.get(), TexturedModel.CUBE);
+
+		blockModels.createTrivialBlock(ModBlocks.BLUE_MOSS_BLOCK.get(), TexturedModel.CUBE);
+
+		blockModels.createTrivialBlock(ModBlocks.ASHES.get(), TexturedModel.CUBE);
+		blockModels.createTrivialBlock(ModBlocks.SUSPICIOUS_ASHES.get(), TexturedModel.CUBE);
 		
 		blockModels.createTrivialBlock(ModBlocks.CINNABAR_ORE.get(), TexturedModel.CUBE);
 		blockModels.createTrivialBlock(ModBlocks.DEEPSLATE_CINNABAR_ORE.get(), TexturedModel.CUBE);
 		blockModels.createTrivialBlock(ModBlocks.RAW_CINNABAR_BLOCK.get(), TexturedModel.CUBE);
 		
-		//blockModels.woodProvider(ModBlocks.CERULEA_LOG.get()).log(ModBlocks.CERULEA_LOG.get());
+
 		logBlock(blockModels, ModBlocks.CERULEA_LOG.get(), ModBlocks.CERULEA_WOOD.get());
-		
-		blockModels.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(ModBlocks.CERULEA_LEAVES.get(), ModelTemplates.CUBE_ALL.extend().renderType("cutout").build()
-				.create(ModBlocks.CERULEA_LEAVES.get(), TextureMapping.cube(ModBlocks.CERULEA_LEAVES.get()), blockModels.modelOutput)));
-		
-		//blockModels.createTrivialBlock(ModBlocks.CERULEA_PLANKS.get(), TexturedModel.CUBE);
+
+		blockModels.createTrivialBlock(ModBlocks.CERULEA_LEAVES.get(),TexturedModel.LEAVES.updateTemplate(template ->
+				template.extend().renderType("minecraft:cutout").build()));
+
+
+
 		blockWithSlab(blockModels, ModBlocks.CERULEA_PLANKS.get(), ModBlocks.CERULEA_SLAB.get());
 		stairsBlock(blockModels, ModBlocks.CERULEA_STAIRS.get(), ModBlocks.CERULEA_PLANKS.get());
 		
-		blockModels.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(ModBlocks.CERULEA_SAPLING.get(), ModelTemplates.CROSS.extend()
-				.renderType("cutout")
-				.build()
-				.create(ModBlocks.CERULEA_SAPLING.get(), TextureMapping.cross(ModBlocks.CERULEA_SAPLING.get()), blockModels.modelOutput))
-		);
-		
+
+
+		blockModels.createTrivialBlock(ModBlocks.CERULEA_SAPLING.get(),TexturedModel.CUBE);
+
 		blockModels.createTrivialBlock(ModBlocks.NULLSTONE.get(), TexturedModel.CUBE);
 		blockModels.createTrivialBlock(ModBlocks.NULLSTONE_UNOBTAINIUM_ORE.get(), TexturedModel.CUBE);
 		
@@ -76,28 +81,21 @@ public class ModModelProvider extends ModelProvider{
 		blockWithSlab(blockModels, ModBlocks.GLOOM_PLANKS.get(), ModBlocks.GLOOM_SLAB.get());
 		stairsBlock(blockModels, ModBlocks.GLOOM_STAIRS.get(), ModBlocks.GLOOM_PLANKS.get());
 		
-		
-		
-		
 
-		blockModels.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(ModBlocks.GLOOM_LEAVES.get(), ModelTemplates.CUBE_ALL.extend().renderType("cutout").build()
-				.create(ModBlocks.GLOOM_LEAVES.get(), TextureMapping.cube(ModBlocks.GLOOM_LEAVES.get()), blockModels.modelOutput)));
-		
+		blockModels.createTrivialBlock(ModBlocks.GLOOM_LEAVES.get(),TexturedModel.LEAVES.updateTemplate(template ->
+				template.extend().renderType("minecraft:cutout").build()));
+
 		blockModels.createTrivialBlock(ModBlocks.CRUCIBLE.get(), TexturedModel.ORIENTABLE_ONLY_TOP);
-		//blockModels.createCrossBlock(ModBlocks.MYSTICAL_GRASS.get(), BlockModelGenerators.PlantType.NOT_TINTED);
-		
-		blockModels.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(ModBlocks.MYSTICAL_GRASS.get(), ModelTemplates.CROSS.extend()
-				.renderType("cutout")
-				.build()
-				.create(ModBlocks.MYSTICAL_GRASS.get(), TextureMapping.cross(ModBlocks.MYSTICAL_GRASS.get()), blockModels.modelOutput))
-		);
-		blockModels.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(ModBlocks.BLUE_CATTAIL.get(), ModelTemplates.CROSS.extend()
-				.renderType("cutout")
-				.build()
-				.create(ModBlocks.BLUE_CATTAIL.get(), TextureMapping.cross(ModBlocks.BLUE_CATTAIL.get()), blockModels.modelOutput))
-		);
-		
-		
+
+		blockModels.createTrivialBlock(ModBlocks.MYSTICAL_GRASS.get(),TexturedModel.CUBE);
+
+		blockModels.createTrivialBlock(ModBlocks.BLUE_CATTAIL.get(),TexturedModel.CUBE);
+
+		//blockModels.createTrivialBlock(ModBlocks.RUNE_PEDESTAL.get(),);
+
+
+
+
         itemModels.itemModelOutput.accept(ModItems.RAW_CINNABAR.get(), new BlockModelWrapper
         		.Unbaked(ModelTemplates.FLAT_ITEM.create(ModItems.RAW_CINNABAR.get(),
         		new TextureMapping().put(TextureSlot.LAYER0, 
@@ -147,13 +145,6 @@ public class ModModelProvider extends ModelProvider{
         		itemModels.modelOutput),
         		Collections.emptyList()));
 		
-        itemModels.itemModelOutput.accept(ModItems.SEEKERS_COMPASS.get(), new BlockModelWrapper
-        		.Unbaked(ModelTemplates.FLAT_ITEM.create(ModItems.SEEKERS_COMPASS.get(),
-        		new TextureMapping().put(TextureSlot.LAYER0, 
-        		itemLocation(getItemName(ModItems.SEEKERS_COMPASS.get()))),
-        		itemModels.modelOutput),
-        		Collections.emptyList()));
-		
         itemModels.itemModelOutput.accept(ModItems.ALCHEMICAL_MEMOIR.get(), new BlockModelWrapper
         		.Unbaked(ModelTemplates.FLAT_ITEM.create(ModItems.ALCHEMICAL_MEMOIR.get(),
         		new TextureMapping().put(TextureSlot.LAYER0, 
@@ -174,7 +165,7 @@ public class ModModelProvider extends ModelProvider{
     protected Stream<? extends Holder<Block>> getKnownBlocks() {
         Collection<DeferredHolder<Block, ? extends Block>> BLOCKS = ModBlocks.BLOCKS.getEntries();
         Set<DeferredHolder<Block, ? extends Block>> COPY = new HashSet<>(BLOCKS);
-        //COPY.remove(BlockRegistry.MAPLE_SYRUP_BLOCK);
+
         return COPY.stream();
     }
 
@@ -182,7 +173,7 @@ public class ModModelProvider extends ModelProvider{
     protected Stream<? extends Holder<Item>> getKnownItems() {
         Collection<DeferredHolder<Item, ? extends Item>> ITEMS = ModItems.ITEMS.getEntries();
         Set<DeferredHolder<Item, ? extends Item>> COPY = new HashSet<>(ITEMS);
-        //COPY.remove(ItemRegistry.WATERING_CAN);
+
 
         
         return COPY.stream();
@@ -227,5 +218,7 @@ public class ModModelProvider extends ModelProvider{
     private ResourceLocation blockLocation(String modelName){
         return ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "block/" + modelName);
     }
+
+
 
 }

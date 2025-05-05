@@ -14,9 +14,11 @@ import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.configurations.BlockColumnConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.BlockPileConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleRandomFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SpikeConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
@@ -53,6 +55,9 @@ public class ModConfiguredFeatures {
 						new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(3),3),
 						new TwoLayersFeatureSize(1,0,2))
 						.build());
+		
+		
+		//register(context,CERULEA_ROCKS_KEY, Feature.FOREST_ROCK, new BlockPileConfiguration(BlockStateProvider.simple(ModBlocks.LIMESTONE.get().defaultBlockState())));
 	}
 	
 	

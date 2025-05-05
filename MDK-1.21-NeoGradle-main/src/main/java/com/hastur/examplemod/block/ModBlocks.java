@@ -47,78 +47,75 @@ public class ModBlocks {
 					.sound(SoundType.STONE
 					)));
 	
-	public static final DeferredBlock<Block> LIMESTONE = registerBlock("limestone",
+	public static final DeferredBlock<Block> LIMESTONE = genericStoneBlock("limestone");
+
+	public static final DeferredBlock<Block> ASHES = registerBlock("ashes",
 			() -> new Block(BlockBehaviour.Properties.of()
 					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "limestone")))
 					.strength(3f)
 					.requiresCorrectToolForDrops()
 					.sound(SoundType.STONE
 					)));
-	
-	public static final DeferredBlock<Block> JADEITE = registerBlock("jadeite",
+
+	public static final DeferredBlock<Block> SUSPICIOUS_ASHES = registerBlock("suspicious_ashes",
 			() -> new Block(BlockBehaviour.Properties.of()
-					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "jadeite")))
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "limestone")))
 					.strength(3f)
 					.requiresCorrectToolForDrops()
 					.sound(SoundType.STONE
 					)));
-	
-	public static final DeferredBlock<Block> ACTIVATED_JADEITE = registerBlock("activated_jadeite",
-			() -> new Block(BlockBehaviour.Properties.of()
-					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "activated_jadeite")))
+
+	public static final DeferredBlock<Block> BLUE_MOSS_BLOCK = genericStoneBlock("blue_moss_block");
+	public static final DeferredBlock<Block> JADEITE = genericStoneBlock("jadeite");
+	public static final DeferredBlock<Block> ACTIVATED_JADEITE = genericStoneBlock("activated_jadeite");
+	public static final DeferredBlock<Block> JADEITE_BLOCK = genericStoneBlock("jadeite_block");
+	public static final DeferredBlock<Block> ACTIVATED_JADEITE_BLOCK = genericStoneBlock("activated_jadeite_block");
+	public static final DeferredBlock<Block> JADEITE_BRICKS = genericStoneBlock("jadeite_bricks");
+	public static final DeferredBlock<Block> ACTIVATED_JADEITE_BRICKS = genericStoneBlock("activated_jadeite_bricks");
+	public static final DeferredBlock<Block> RAW_CINNABAR_BLOCK = genericStoneBlock("raw_cinnabar_block");
+	public static final DeferredBlock<Block> NULLSTONE = genericStoneBlock("nullstone");
+
+	public static final DeferredBlock<Block> RUNE_PEDESTAL = registerBlock("rune_pedestal",
+			() -> new RunePedestalBlock(BlockBehaviour.Properties.of()
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "rune_pedestal")))
+					.strength(3f)
+					.noOcclusion()
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.STONE
+					)));
+
+	public static final DeferredBlock<Block> JADEITE_BLOCK_SLAB = registerBlock("jadeite_block_slab",
+			() -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ANDESITE_SLAB)
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "jadeite_block_slab")))
 					.strength(3f)
 					.requiresCorrectToolForDrops()
 					.sound(SoundType.STONE
 					)));
-	
-	public static final DeferredBlock<Block> JADEITE_BLOCK = registerBlock("jadeite_block",
-			() -> new Block(BlockBehaviour.Properties.of()
-					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "jadeite_block")))
+
+	public static final DeferredBlock<Block> JADEITE_BRICKS_SLAB = registerBlock("jadeite_bricks_slab",
+			() -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ANDESITE_SLAB)
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "jadeite_bricks_slab")))
 					.strength(3f)
 					.requiresCorrectToolForDrops()
 					.sound(SoundType.STONE
 					)));
-	
-	public static final DeferredBlock<Block> ACTIVATED_JADEITE_BLOCK = registerBlock("activated_jadeite_block",
-			() -> new Block(BlockBehaviour.Properties.of()
-					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "activated_jadeite_block")))
+
+	public static final DeferredBlock<Block> JADEITE_BLOCK_STAIRS = registerBlock("jadeite_block_stairs",
+			() -> new StairBlock(ModBlocks.JADEITE_BLOCK.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS)
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "jadeite_block_stairs")))
 					.strength(3f)
 					.requiresCorrectToolForDrops()
-					.sound(SoundType.STONE
+					.sound(SoundType.WOOD
 					)));
-	
-	public static final DeferredBlock<Block> JADEITE_BRICKS = registerBlock("jadeite_bricks",
-			() -> new Block(BlockBehaviour.Properties.of()
-					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "jadeite_bricks")))
+
+	public static final DeferredBlock<Block> JADEITE_BRICK_STAIRS = registerBlock("jadeite_brick_stairs",
+			() -> new StairBlock(ModBlocks.JADEITE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_STAIRS)
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "jadeite_brick_stairs")))
 					.strength(3f)
 					.requiresCorrectToolForDrops()
-					.sound(SoundType.STONE
+					.sound(SoundType.WOOD
 					)));
-	
-	public static final DeferredBlock<Block> ACTIVATED_JADEITE_BRICKS = registerBlock("activated_jadeite_bricks",
-			() -> new Block(BlockBehaviour.Properties.of()
-					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "activated_jadeite_bricks")))
-					.strength(3f)
-					.requiresCorrectToolForDrops()
-					.sound(SoundType.STONE
-					)));
-	
-	public static final DeferredBlock<Block> RAW_CINNABAR_BLOCK = registerBlock("raw_cinnabar_block",
-			() -> new Block(BlockBehaviour.Properties.of()
-					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "raw_cinnabar_block")))
-					.strength(3f)
-					.requiresCorrectToolForDrops()
-					.sound(SoundType.STONE
-					)));
-	
-	public static final DeferredBlock<Block> NULLSTONE = registerBlock("nullstone",
-			() -> new Block(BlockBehaviour.Properties.of()
-					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "nullstone")))
-					.strength(3f)
-					.requiresCorrectToolForDrops()
-					.sound(SoundType.STONE
-					)));
-	
+
 	public static final DeferredBlock<Block> CRUCIBLE = registerBlock("crucible",
 			() -> new Block(BlockBehaviour.Properties.of()
 					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "crucible")))
@@ -144,40 +141,10 @@ public class ModBlocks {
 					)));
 	
 	
-	
-	
-	
-	public static final DeferredBlock<Block> GLOOM_LOG = registerBlock("gloom_log",
-			() -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
-					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "gloom_log")))
-					.strength(3f)
-					.requiresCorrectToolForDrops()
-					.sound(SoundType.WOOD
-					)));
-	
-	public static final DeferredBlock<Block> GLOOM_WOOD = registerBlock("gloom_wood",
-			() -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
-					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "gloom_wood")))
-					.strength(3f)
-					.requiresCorrectToolForDrops()
-					.sound(SoundType.WOOD
-					)));
-	
-	public static final DeferredBlock<Block> STRIPPED_GLOOM_LOG = registerBlock("stripped_gloom_log",
-			() -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
-					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "stripped_gloom_log")))
-					.strength(3f)
-					.requiresCorrectToolForDrops()
-					.sound(SoundType.WOOD
-					)));
-	
-	public static final DeferredBlock<Block> STRIPPED_GLOOM_WOOD = registerBlock("stripped_gloom_wood",
-			() -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
-					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "stripped_gloom_wood")))
-					.strength(3f)
-					.requiresCorrectToolForDrops()
-					.sound(SoundType.WOOD
-					)));
+	public static final DeferredBlock<Block> GLOOM_LOG = genericPillarBlock("gloom_log");
+	public static final DeferredBlock<Block> GLOOM_WOOD = genericPillarBlock("gloom_wood");
+	public static final DeferredBlock<Block> STRIPPED_GLOOM_LOG = genericPillarBlock("stripped_gloom_log");
+	public static final DeferredBlock<Block> STRIPPED_GLOOM_WOOD = genericPillarBlock("stripped_gloom_wood");
 	
 	public static final DeferredBlock<Block> GLOOM_PLANKS = registerBlock("gloom_planks",
 			() -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)
@@ -202,9 +169,7 @@ public class ModBlocks {
 					.requiresCorrectToolForDrops()
 					.sound(SoundType.WOOD
 					)));
-	
-	
-	
+
 	
 	
 	
@@ -246,21 +211,8 @@ public class ModBlocks {
 					.sound(SoundType.GRASS
 					)));
 	
-	public static final DeferredBlock<Block> CERULEA_LOG = registerBlock("cerulea_log",
-			() -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
-					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "cerulea_log")))
-					.strength(3f)
-					.requiresCorrectToolForDrops()
-					.sound(SoundType.WOOD
-					)));
-	
-	public static final DeferredBlock<Block> CERULEA_WOOD = registerBlock("cerulea_wood",
-			() -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)
-					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "cerulea_wood")))
-					.strength(3f)
-					.requiresCorrectToolForDrops()
-					.sound(SoundType.WOOD
-					)));
+	public static final DeferredBlock<Block> CERULEA_LOG = genericPillarBlock("cerulea_log");
+	public static final DeferredBlock<Block> CERULEA_WOOD = genericPillarBlock("cerulea_wood");
 	
 	public static final DeferredBlock<Block> CERULEA_PLANKS = registerBlock("cerulea_planks",
 			() -> new Block(BlockBehaviour.Properties.of()
@@ -286,7 +238,29 @@ public class ModBlocks {
 					.sound(SoundType.WOOD
 					)));
 	
-	
+
+	public static final DeferredBlock<Block> genericStoneBlock(String name)
+	{
+		return registerBlock(name,
+				() -> new Block(BlockBehaviour.Properties.of()
+						.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, name)))
+						.strength(2.5f)
+						.requiresCorrectToolForDrops()
+						.sound(SoundType.STONE
+						)));
+	}
+
+	public static final DeferredBlock<Block> genericPillarBlock(String name)
+	{
+		return registerBlock(name,
+				() -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)
+						.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, name)))
+						.strength(3f)
+						.requiresCorrectToolForDrops()
+						.sound(SoundType.WOOD
+						)));
+	}
+
 	
 	private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
 		DeferredBlock<T> toReturn = BLOCKS.register(name, block);

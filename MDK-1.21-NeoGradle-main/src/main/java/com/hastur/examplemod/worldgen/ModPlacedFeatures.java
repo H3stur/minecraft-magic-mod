@@ -30,6 +30,8 @@ public class ModPlacedFeatures {
 	
 	public static final ResourceKey<PlacedFeature> CERULEA_TREE_PLACED_KEY = registerKey("cerulea_tree_placed");
 	
+	public static final ResourceKey<PlacedFeature> CERULEA_ROCKS_PLACED_KEY = registerKey("cerulea_rocks_placed");
+	
 	
 	public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -40,6 +42,10 @@ public class ModPlacedFeatures {
         
         register(context, CERULEA_TREE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.CERULEA_KEY),
         		VegetationPlacements.treePlacement(PlacementUtils.countExtra(5, 0.2F, 2),ModBlocks.CERULEA_SAPLING.get()));
+        
+        
+        //register(context, CERULEA_ROCKS_PLACED_KEY,configuredFeatures.getOrThrow(ModConfiguredFeatures.CERULEA_ROCKS_KEY),
+        		//VegetationPlacements.treePlacement(PlacementUtils.countExtra(5, 0.2F, 2),ModBlocks.CERULEA_SAPLING.get()));
     }
 	
 	

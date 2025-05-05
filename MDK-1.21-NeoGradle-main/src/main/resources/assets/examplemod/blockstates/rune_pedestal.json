@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "examplemod:block/rune_pedestal",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "examplemod:block/rune_pedestal"
+    },
+    "facing=east": {
+      "model": "examplemod:block/rune_pedestal",
+      "y": 270
+    },
+    "facing=west": {
+      "model": "examplemod:block/rune_pedestal",
+      "y": 90
+    }
+  }
+}

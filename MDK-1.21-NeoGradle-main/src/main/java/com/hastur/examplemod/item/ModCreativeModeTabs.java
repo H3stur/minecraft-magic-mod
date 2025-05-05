@@ -25,7 +25,6 @@ public class ModCreativeModeTabs {
 						output.accept(ModItems.RAW_CINNABAR);
 						output.accept(ModItems.ALCHEMICAL_MEMOIR);
 						output.accept(ModItems.STARLIGHT_SHARD);
-						output.accept(ModItems.SEEKERS_COMPASS);
 						output.accept(ModItems.IRON_AMALGAM);
 						output.accept(ModItems.GOLD_AMALGAM);
 						output.accept(ModItems.COPPER_AMALGAM);
@@ -41,8 +40,14 @@ public class ModCreativeModeTabs {
 						output.accept(ModBlocks.CINNABAR_ORE);
 						output.accept(ModBlocks.DEEPSLATE_CINNABAR_ORE);
 						output.accept(ModBlocks.LIMESTONE);
+						output.accept(ModBlocks.ASHES);
+						output.accept(ModBlocks.SUSPICIOUS_ASHES);
 						output.accept(ModBlocks.JADEITE);
 						output.accept(ModBlocks.JADEITE_BLOCK);
+						output.accept(ModBlocks.JADEITE_BLOCK_SLAB);
+						output.accept(ModBlocks.JADEITE_BRICKS_SLAB);
+						output.accept(ModBlocks.JADEITE_BLOCK_STAIRS);
+						output.accept(ModBlocks.JADEITE_BRICK_STAIRS);
 						output.accept(ModBlocks.JADEITE_BRICKS);
 						output.accept(ModBlocks.ACTIVATED_JADEITE_BLOCK);
 						output.accept(ModBlocks.ACTIVATED_JADEITE_BRICKS);
@@ -53,6 +58,9 @@ public class ModCreativeModeTabs {
 						output.accept(ModBlocks.NULLSTONE_UNOBTAINIUM_ORE);
 						
 						output.accept(ModBlocks.BLUE_CATTAIL);
+						output.accept(ModBlocks.BLUE_MOSS_BLOCK);
+
+						output.accept(ModBlocks.RUNE_PEDESTAL);
 						
 						output.accept(ModBlocks.GLOOM_LOG);
 						output.accept(ModBlocks.GLOOM_LEAVES);

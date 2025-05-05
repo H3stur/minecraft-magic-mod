@@ -1,0 +1,7 @@
+{
+	"type": "neoforge:add_features",
+	"biomes": "#minecraft:is_overworld",
+	"features": "examplemod:limestone_placed",
+	"step": "underground_ores"
+
+}

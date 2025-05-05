@@ -14,8 +14,14 @@
 	"block.examplemod.deepslate_cinnabar_ore": "Deepslate Cinnabar Ore",
 	"block.examplemod.raw_cinnabar_block": "Raw Cinnabar Block",
 	"block.examplemod.limestone": "Limestone",
+	"block.examplemod.ashes": "Ashes",
+	"block.examplemod.suspicious_ashes": "Suspicious Ashes",
 	"block.examplemod.jadeite": "Jadeite",
 	"block.examplemod.jadeite_block": "Jadeite Block",
+	"block.examplemod.jadeite_block_slab": "Jadeite Block Slab",
+	"block.examplemod.jadeite_bricks_slab": "Jadeite Brick Slab",
+	"block.examplemod.jadeite_block_stairs": "Jadeite Block Stairs",
+	"block.examplemod.jadeite_brick_stairs": "Jadeite Brick Stairs",
 	"block.examplemod.jadeite_bricks": "Jadeite Bricks",
 	"block.examplemod.activated_jadeite": "Activated Jadeite",
 	"block.examplemod.activated_jadeite_block": "Activated Jadeite Block",
@@ -39,6 +45,8 @@
 	"block.examplemod.cerulea_slab": "Cerulea Slab",
 	"block.examplemod.cerulea_wood": "Cerulea Wood",
 	"block.examplemod.cerulea_sapling": "Cerulea Sapling",
+	"block.examplemod.blue_moss_block": "Blue Moss Block",
+	"block.examplemod.rune_pedestal": "Rune Pedestal",
 	
 	"creativetab.examplemod.praeconis_items": "Praeconis Items",
 	"creativetab.examplemod.praeconis_blocks": "Praeconis Blocks"

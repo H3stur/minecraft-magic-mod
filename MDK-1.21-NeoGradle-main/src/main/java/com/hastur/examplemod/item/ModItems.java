@@ -1,7 +1,6 @@
 package com.hastur.examplemod.item;
 
 import com.hastur.examplemod.ExampleMod;
-import com.hastur.examplemod.item.custom.SeekersCompassItem;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -58,12 +57,6 @@ public class ModItems {
 			() -> new Item(new Item.Properties()
 					.useItemDescriptionPrefix()
 					.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "copper_amalgam")))));
-	
-	public static final DeferredItem<Item> SEEKERS_COMPASS = ITEMS.register("seekers_compass",
-			() -> new SeekersCompassItem(new SeekersCompassItem.Properties()
-					.useItemDescriptionPrefix()
-					.setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "seekers_compass")))));
-	
 	
 	public static void register(IEventBus eventBus) {
 		ITEMS.register(eventBus);
