@@ -193,23 +193,8 @@ public class ModBlocks {
 					.sound(SoundType.GRASS
 					)));
 	
-	public static final DeferredBlock<Block> GLOOM_LEAVES = registerBlock("gloom_leaves",
-			() -> new Block(BlockBehaviour.Properties.of()
-					.noOcclusion()
-					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "gloom_leaves")))
-					.strength(3f)
-					.requiresCorrectToolForDrops()
-					.sound(SoundType.GRASS
-					)));
-	
-	public static final DeferredBlock<Block> CERULEA_LEAVES = registerBlock("cerulea_leaves",
-			() -> new Block(BlockBehaviour.Properties.of()
-					.noOcclusion()
-					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "cerulea_leaves")))
-					.strength(3f)
-					.requiresCorrectToolForDrops()
-					.sound(SoundType.GRASS
-					)));
+	public static final DeferredBlock<Block> GLOOM_LEAVES = genericLeafBlock("gloom_leaves");
+	public static final DeferredBlock<Block> CERULEA_LEAVES = genericLeafBlock("cerulea_leaves");
 	
 	public static final DeferredBlock<Block> CERULEA_LOG = genericPillarBlock("cerulea_log");
 	public static final DeferredBlock<Block> CERULEA_WOOD = genericPillarBlock("cerulea_wood");
@@ -261,6 +246,17 @@ public class ModBlocks {
 						)));
 	}
 
+	public static final DeferredBlock<Block> genericLeafBlock(String name)
+	{
+		return registerBlock(name,
+			() -> new Block(BlockBehaviour.Properties.of()
+					.noOcclusion()
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, name)))
+					.strength(3f)
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.GRASS
+					)));
+	}
 	
 	private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
 		DeferredBlock<T> toReturn = BLOCKS.register(name, block);
