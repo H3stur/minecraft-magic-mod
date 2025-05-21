@@ -12,10 +12,13 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.MultiVariant;
+import net.minecraft.client.data.models.blockstates.MultiPartGenerator;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.*;
+import net.minecraft.client.renderer.block.model.VariantMutator;
 import net.minecraft.client.renderer.item.BlockModelWrapper;
+import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -74,7 +77,9 @@ public class ModModelProvider extends ModelProvider{
 		blockModels.createTrivialBlock(ModBlocks.NULLSTONE.get(), TexturedModel.CUBE);
 		blockModels.createTrivialBlock(ModBlocks.NULLSTONE_UNOBTAINIUM_ORE.get(), TexturedModel.CUBE);
 		
-		
+
+
+
 		
 		logBlock(blockModels, ModBlocks.GLOOM_LOG.get(), ModBlocks.GLOOM_WOOD.get());
 		logBlock(blockModels, ModBlocks.STRIPPED_GLOOM_LOG.get(), ModBlocks.STRIPPED_GLOOM_WOOD.get());
@@ -91,8 +96,11 @@ public class ModModelProvider extends ModelProvider{
 
 		blockModels.createTrivialBlock(ModBlocks.BLUE_CATTAIL.get(),TexturedModel.CUBE);
 
-		//blockModels.createTrivialBlock(ModBlocks.RUNE_PEDESTAL.get(),);
 
+		//blockModels.blockStateOutput.accept(
+		//		MultiVariantGenerator.dispatch(ModBlocks.RUNE_PEDESTAL.get())
+		//				.with(ROTATION_HORIZONTAL_FACING)
+		//);
 
 
 
@@ -219,6 +227,10 @@ public class ModModelProvider extends ModelProvider{
         return ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "block/" + modelName);
     }
 
-
+	public static final PropertyDispatch<VariantMutator> ROTATION_HORIZONTAL_FACING = PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING)
+			.select(Direction.EAST, BlockModelGenerators.Y_ROT_90)
+			.select(Direction.SOUTH, BlockModelGenerators.Y_ROT_180)
+			.select(Direction.WEST, BlockModelGenerators.Y_ROT_270)
+			.select(Direction.NORTH, BlockModelGenerators.NOP);
 
 }
