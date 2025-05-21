@@ -104,70 +104,26 @@ public class ModModelProvider extends ModelProvider{
 
 
 
-        itemModels.itemModelOutput.accept(ModItems.RAW_CINNABAR.get(), new BlockModelWrapper
-        		.Unbaked(ModelTemplates.FLAT_ITEM.create(ModItems.RAW_CINNABAR.get(),
-        		new TextureMapping().put(TextureSlot.LAYER0, 
-        		itemLocation(getItemName(ModItems.RAW_CINNABAR.get()))),
-        		itemModels.modelOutput),
-        		Collections.emptyList()));
-
-        itemModels.itemModelOutput.accept(ModItems.MERCURY.get(), new BlockModelWrapper
-        		.Unbaked(ModelTemplates.FLAT_ITEM.create(ModItems.MERCURY.get(),
-        		new TextureMapping().put(TextureSlot.LAYER0, 
-        		itemLocation(getItemName(ModItems.MERCURY.get()))),
-        		itemModels.modelOutput),
-        		Collections.emptyList()));
-        
-        itemModels.itemModelOutput.accept(ModItems.JADE_SHARD.get(), new BlockModelWrapper
-        		.Unbaked(ModelTemplates.FLAT_ITEM.create(ModItems.JADE_SHARD.get(),
-        		new TextureMapping().put(TextureSlot.LAYER0, 
-        		itemLocation(getItemName(ModItems.JADE_SHARD.get()))),
-        		itemModels.modelOutput),
-        		Collections.emptyList()));
-        
-        itemModels.itemModelOutput.accept(ModItems.ACTIVATED_JADE_SHARD.get(), new BlockModelWrapper
-        		.Unbaked(ModelTemplates.FLAT_ITEM.create(ModItems.ACTIVATED_JADE_SHARD.get(),
-        		new TextureMapping().put(TextureSlot.LAYER0, 
-        		itemLocation(getItemName(ModItems.ACTIVATED_JADE_SHARD.get()))),
-        		itemModels.modelOutput),
-        		Collections.emptyList()));
-		
-        itemModels.itemModelOutput.accept(ModItems.GOLD_AMALGAM.get(), new BlockModelWrapper
-        		.Unbaked(ModelTemplates.FLAT_ITEM.create(ModItems.GOLD_AMALGAM.get(),
-        		new TextureMapping().put(TextureSlot.LAYER0, 
-        		itemLocation(getItemName(ModItems.GOLD_AMALGAM.get()))),
-        		itemModels.modelOutput),
-        		Collections.emptyList()));
-        
-        itemModels.itemModelOutput.accept(ModItems.IRON_AMALGAM.get(), new BlockModelWrapper
-        		.Unbaked(ModelTemplates.FLAT_ITEM.create(ModItems.IRON_AMALGAM.get(),
-        		new TextureMapping().put(TextureSlot.LAYER0, 
-        		itemLocation(getItemName(ModItems.IRON_AMALGAM.get()))),
-        		itemModels.modelOutput),
-        		Collections.emptyList()));
-        
-        itemModels.itemModelOutput.accept(ModItems.COPPER_AMALGAM.get(), new BlockModelWrapper
-        		.Unbaked(ModelTemplates.FLAT_ITEM.create(ModItems.COPPER_AMALGAM.get(),
-        		new TextureMapping().put(TextureSlot.LAYER0, 
-        		itemLocation(getItemName(ModItems.COPPER_AMALGAM.get()))),
-        		itemModels.modelOutput),
-        		Collections.emptyList()));
-		
-        itemModels.itemModelOutput.accept(ModItems.ALCHEMICAL_MEMOIR.get(), new BlockModelWrapper
-        		.Unbaked(ModelTemplates.FLAT_ITEM.create(ModItems.ALCHEMICAL_MEMOIR.get(),
-        		new TextureMapping().put(TextureSlot.LAYER0, 
-        		itemLocation(getItemName(ModItems.ALCHEMICAL_MEMOIR.get()))),
-        		itemModels.modelOutput),
-        		Collections.emptyList()));
-
-        itemModels.itemModelOutput.accept(ModItems.STARLIGHT_SHARD.get(), new BlockModelWrapper
-        		.Unbaked(ModelTemplates.FLAT_ITEM.create(ModItems.STARLIGHT_SHARD.get(),
-        		new TextureMapping().put(TextureSlot.LAYER0, 
-        		itemLocation(getItemName(ModItems.STARLIGHT_SHARD.get()))),
-        		itemModels.modelOutput),
-        		Collections.emptyList()));
+		genericItemModel(ModItems.RAW_CINNABAR.get(),itemModels);
+		genericItemModel(ModItems.MERCURY.get(),itemModels);
+		genericItemModel(ModItems.JADE_SHARD.get(),itemModels);
+		genericItemModel(ModItems.ACTIVATED_JADE_SHARD.get(),itemModels);
+		genericItemModel(ModItems.GOLD_AMALGAM.get(),itemModels);
+		genericItemModel(ModItems.IRON_AMALGAM.get(),itemModels);
+		genericItemModel(ModItems.COPPER_AMALGAM.get(),itemModels);
+		genericItemModel(ModItems.ALCHEMICAL_MEMOIR.get(),itemModels);
+        genericItemModel(ModItems.STARLIGHT_SHARD.get(),itemModels);
 	}
-	
+
+	public void genericItemModel(Item item, ItemModelGenerators itemModels)
+	{
+		itemModels.itemModelOutput.accept(item, new BlockModelWrapper
+				.Unbaked(ModelTemplates.FLAT_ITEM.create(item,
+				new TextureMapping().put(TextureSlot.LAYER0,
+						itemLocation(getItemName(item))),
+				itemModels.modelOutput),
+				Collections.emptyList()));
+	}
 	
     @Override
     protected Stream<? extends Holder<Block>> getKnownBlocks() {
