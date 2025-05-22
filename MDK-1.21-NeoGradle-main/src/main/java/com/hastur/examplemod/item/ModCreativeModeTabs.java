@@ -30,6 +30,8 @@ public class ModCreativeModeTabs {
 						output.accept(ModItems.COPPER_AMALGAM);
 						output.accept(ModItems.JADE_SHARD);
 						output.accept(ModItems.ACTIVATED_JADE_SHARD);
+						output.accept(ModItems.BLANK_RUNE);
+						output.accept(ModItems.PRIMITIVE_RUNE);
 						
 			}).build());
 	

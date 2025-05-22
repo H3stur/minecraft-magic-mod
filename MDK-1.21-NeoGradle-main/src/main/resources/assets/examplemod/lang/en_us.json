@@ -9,6 +9,8 @@
 	"item.examplemod.copper_amalgam": "Copper Amalgam",
 	"item.examplemod.jade_shard": "Jade Shard",
 	"item.examplemod.activated_jade_shard": "Activated Jade Shard",
+	"item.examplemod.blank_rune": "Blank Rune",
+	"item.examplemod.primitive_rune": "Primitive Rune",
 	
 	"block.examplemod.cinnabar_ore": "Cinnabar Ore",
 	"block.examplemod.deepslate_cinnabar_ore": "Deepslate Cinnabar Ore",

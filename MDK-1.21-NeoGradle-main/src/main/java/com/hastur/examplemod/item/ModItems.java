@@ -22,6 +22,8 @@ public class ModItems {
 	public static final DeferredItem<Item> GOLD_AMALGAM = genericItem("gold_amalgam");
 	public static final DeferredItem<Item> IRON_AMALGAM = genericItem("iron_amalgam");
 	public static final DeferredItem<Item> COPPER_AMALGAM = genericItem("copper_amalgam");
+	public static final DeferredItem<Item> BLANK_RUNE = genericItem("blank_rune");
+	public static final DeferredItem<Item> PRIMITIVE_RUNE = genericItem("primitive_rune");
 
 	public static final DeferredItem<Item> genericItem (String name)
 	{

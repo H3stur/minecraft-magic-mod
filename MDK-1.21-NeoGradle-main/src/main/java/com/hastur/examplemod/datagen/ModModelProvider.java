@@ -12,6 +12,7 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.MultiVariant;
+import net.minecraft.client.data.models.blockstates.BlockModelDefinitionGenerator;
 import net.minecraft.client.data.models.blockstates.MultiPartGenerator;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
@@ -97,10 +98,7 @@ public class ModModelProvider extends ModelProvider{
 		blockModels.createTrivialBlock(ModBlocks.BLUE_CATTAIL.get(),TexturedModel.CUBE);
 
 
-		//blockModels.blockStateOutput.accept(
-		//		MultiVariantGenerator.dispatch(ModBlocks.RUNE_PEDESTAL.get())
-		//				.with(ROTATION_HORIZONTAL_FACING)
-		//);
+		blockModels.blockStateOutput.accept();
 
 
 
@@ -113,6 +111,8 @@ public class ModModelProvider extends ModelProvider{
 		genericItemModel(ModItems.COPPER_AMALGAM.get(),itemModels);
 		genericItemModel(ModItems.ALCHEMICAL_MEMOIR.get(),itemModels);
         genericItemModel(ModItems.STARLIGHT_SHARD.get(),itemModels);
+		genericItemModel(ModItems.BLANK_RUNE.get(),itemModels);
+		genericItemModel(ModItems.PRIMITIVE_RUNE.get(),itemModels);
 	}
 
 	public void genericItemModel(Item item, ItemModelGenerators itemModels)
@@ -182,11 +182,5 @@ public class ModModelProvider extends ModelProvider{
     private ResourceLocation blockLocation(String modelName){
         return ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "block/" + modelName);
     }
-
-	public static final PropertyDispatch<VariantMutator> ROTATION_HORIZONTAL_FACING = PropertyDispatch.modify(BlockStateProperties.HORIZONTAL_FACING)
-			.select(Direction.EAST, BlockModelGenerators.Y_ROT_90)
-			.select(Direction.SOUTH, BlockModelGenerators.Y_ROT_180)
-			.select(Direction.WEST, BlockModelGenerators.Y_ROT_270)
-			.select(Direction.NORTH, BlockModelGenerators.NOP);
 
 }
