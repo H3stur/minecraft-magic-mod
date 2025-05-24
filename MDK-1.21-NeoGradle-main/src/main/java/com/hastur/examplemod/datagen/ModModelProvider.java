@@ -98,7 +98,7 @@ public class ModModelProvider extends ModelProvider{
 		blockModels.createTrivialBlock(ModBlocks.BLUE_CATTAIL.get(),TexturedModel.CUBE);
 
 
-		blockModels.blockStateOutput.accept();
+
 
 
 

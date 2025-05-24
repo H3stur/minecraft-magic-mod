@@ -1,5 +1,6 @@
 package com.hastur.examplemod;
 
+import com.hastur.examplemod.block.ModBlockEntities;
 import com.hastur.examplemod.sounds.ModSounds;
 import org.slf4j.Logger;
 
@@ -73,6 +74,7 @@ public class ExampleMod
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
         ModSounds.SOUND_EVENTS.register(modEventBus);
         
         
