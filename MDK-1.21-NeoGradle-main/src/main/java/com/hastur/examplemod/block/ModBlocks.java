@@ -84,6 +84,15 @@ public class ModBlocks {
 					.sound(SoundType.STONE
 					)));
 
+	public static final DeferredBlock<Block> INSCRIBING_TABLE = registerBlock("inscribing_table",
+			() -> new InscribingTableBlock(BlockBehaviour.Properties.of()
+					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "inscribing_table")))
+					.strength(3f)
+					.noOcclusion()
+					.requiresCorrectToolForDrops()
+					.sound(SoundType.STONE
+					)));
+
 	public static final DeferredBlock<Block> JADEITE_BLOCK_SLAB = registerBlock("jadeite_block_slab",
 			() -> new SlabBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.ANDESITE_SLAB)
 					.setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "jadeite_block_slab")))

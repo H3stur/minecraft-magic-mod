@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "examplemod:block/inscribing_table",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "examplemod:block/inscribing_table"
+    },
+    "facing=east": {
+      "model": "examplemod:block/inscribing_table",
+      "y": 270
+    },
+    "facing=west": {
+      "model": "examplemod:block/inscribing_table",
+      "y": 90
+    }
+  }
+}

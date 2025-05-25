@@ -168,11 +168,11 @@ public class ModModelProvider extends ModelProvider{
 
 	@Override
 	protected Stream<? extends Holder<Block>> getKnownBlocks() {
-		return ModBlocks.BLOCKS.getEntries().stream().filter(x -> !x.is(ModBlocks.RUNE_PEDESTAL));
+		return ModBlocks.BLOCKS.getEntries().stream().filter(x -> !x.is(ModBlocks.RUNE_PEDESTAL) && !x.is(ModBlocks.INSCRIBING_TABLE));
 	}
 
 	@Override
 	protected Stream<? extends Holder<Item>> getKnownItems() {
-		return ModItems.ITEMS.getEntries().stream().filter(x -> x.get() != ModBlocks.RUNE_PEDESTAL.asItem());
+		return ModItems.ITEMS.getEntries().stream().filter(x -> x.get() != ModBlocks.RUNE_PEDESTAL.asItem()  && x.get() != ModBlocks.INSCRIBING_TABLE.asItem());
 	}
 }

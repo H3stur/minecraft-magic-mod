@@ -49,7 +49,9 @@
 	"block.examplemod.cerulea_sapling": "Cerulea Sapling",
 	"block.examplemod.blue_moss_block": "Blue Moss Block",
 	"block.examplemod.rune_pedestal": "Rune Pedestal",
-	
+	"block.examplemod.inscribing_table": "Incribing Table",
+
+
 	"creativetab.examplemod.praeconis_items": "Praeconis Items",
 	"creativetab.examplemod.praeconis_blocks": "Praeconis Blocks"
 }

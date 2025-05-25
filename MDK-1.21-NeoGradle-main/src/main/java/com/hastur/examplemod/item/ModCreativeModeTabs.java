@@ -63,6 +63,7 @@ public class ModCreativeModeTabs {
 						output.accept(ModBlocks.BLUE_MOSS_BLOCK);
 
 						output.accept(ModBlocks.RUNE_PEDESTAL);
+						output.accept(ModBlocks.INSCRIBING_TABLE);
 						
 						output.accept(ModBlocks.GLOOM_LOG);
 						output.accept(ModBlocks.GLOOM_LEAVES);
