@@ -124,24 +124,6 @@ public class ModModelProvider extends ModelProvider{
 				itemModels.modelOutput),
 				Collections.emptyList()));
 	}
-	
-    @Override
-    protected Stream<? extends Holder<Block>> getKnownBlocks() {
-        Collection<DeferredHolder<Block, ? extends Block>> BLOCKS = ModBlocks.BLOCKS.getEntries();
-        Set<DeferredHolder<Block, ? extends Block>> COPY = new HashSet<>(BLOCKS);
-
-        return COPY.stream();
-    }
-
-    @Override
-    protected Stream<? extends Holder<Item>> getKnownItems() {
-        Collection<DeferredHolder<Item, ? extends Item>> ITEMS = ModItems.ITEMS.getEntries();
-        Set<DeferredHolder<Item, ? extends Item>> COPY = new HashSet<>(ITEMS);
-
-
-        
-        return COPY.stream();
-    }
     
     private String getItemName(Item item){
         ResourceLocation location = BuiltInRegistries.ITEM.getKey(item);
@@ -183,4 +165,14 @@ public class ModModelProvider extends ModelProvider{
         return ResourceLocation.fromNamespaceAndPath(ExampleMod.MODID, "block/" + modelName);
     }
 
+
+	@Override
+	protected Stream<? extends Holder<Block>> getKnownBlocks() {
+		return ModBlocks.BLOCKS.getEntries().stream().filter(x -> !x.is(ModBlocks.RUNE_PEDESTAL));
+	}
+
+	@Override
+	protected Stream<? extends Holder<Item>> getKnownItems() {
+		return ModItems.ITEMS.getEntries().stream().filter(x -> x.get() != ModBlocks.RUNE_PEDESTAL.asItem());
+	}
 }
