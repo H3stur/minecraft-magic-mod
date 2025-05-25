@@ -1,8 +1,11 @@
 package com.hastur.examplemod.block;
 
+import com.hastur.examplemod.item.ModItems;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -70,10 +73,20 @@ public class RunePedestalBlock extends BaseEntityBlock {
     protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
                                           Player player, InteractionHand hand, BlockHitResult hitResult){
 
-
-        //if(RunePedestalBlockEntity.inventory.getStackInSlot(0).isEmpty() && !stack.isEmpty()){
-        //
-        //}
+        if(level.getBlockEntity(pos) instanceof RunePedestalBlockEntity runePedestalBlockEntity) {
+            if (runePedestalBlockEntity.inventory.getStackInSlot(0).isEmpty() && !stack.isEmpty()) {
+                if (stack.getItem() == ModItems.PRIMITIVE_RUNE.get()){
+                    runePedestalBlockEntity.inventory.insertItem(0, stack.copy(), false);
+                    stack.shrink(1);
+                    level.playSound(player, pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1f, 2f);
+                }
+            } else if(stack.isEmpty()) {
+                ItemStack stackOnPedestal = runePedestalBlockEntity.inventory.extractItem(0, 1, false);
+                player.setItemInHand(InteractionHand.MAIN_HAND, stackOnPedestal);
+                runePedestalBlockEntity.clearContents();
+                level.playSound(player, pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 1f, 1f);
+            }
+        }
 
         return InteractionResult.SUCCESS;
     }

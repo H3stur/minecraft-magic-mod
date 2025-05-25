@@ -28,6 +28,10 @@ public class RunePedestalBlockEntity extends BlockEntity {
 
         }
 
+
     };
 
+    public void clearContents() {
+        inventory.setStackInSlot(0, ItemStack.EMPTY);
+    }
 }
