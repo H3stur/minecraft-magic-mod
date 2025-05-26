@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_jade_shard": {
+      "conditions": {
+        "items": [
+          {
+            "items": "examplemod:jade_shard"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "examplemod:inscribing_table"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_jade_shard"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "examplemod:inscribing_table"
+    ]
+  }
+}

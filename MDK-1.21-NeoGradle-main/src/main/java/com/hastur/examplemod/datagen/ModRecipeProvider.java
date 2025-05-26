@@ -16,6 +16,7 @@ import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
 
 public class ModRecipeProvider extends RecipeProvider{
@@ -38,7 +39,18 @@ public class ModRecipeProvider extends RecipeProvider{
         .define('A', ModItems.RAW_CINNABAR)
         .unlockedBy(getHasName(ModItems.RAW_CINNABAR), has(ModItems.RAW_CINNABAR))
         .save(output);
-        
+
+        // Craft 9 Raw Cinnabar into a Block
+        ShapedRecipeBuilder.shaped(items, RecipeCategory.BUILDING_BLOCKS, ModBlocks.INSCRIBING_TABLE.get(),1)
+                .pattern("AAA")
+                .pattern("CBC")
+                .pattern("C C")
+                .define('A', Blocks.DEEPSLATE)
+                .define('B', ModItems.JADE_SHARD)
+                .define('C', Blocks.OAK_LOG)
+                .unlockedBy(getHasName(ModItems.JADE_SHARD), has(ModItems.JADE_SHARD))
+                .save(output);
+
         ShapedRecipeBuilder.shaped(items, RecipeCategory.BUILDING_BLOCKS, ModBlocks.JADEITE_BLOCK.get(),4)
         .pattern("AA ")
         .pattern("AA ")

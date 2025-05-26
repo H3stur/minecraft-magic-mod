@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "A": "minecraft:deepslate",
+    "B": "examplemod:jade_shard",
+    "C": "minecraft:oak_log"
+  },
+  "pattern": [
+    "AAA",
+    "CBC",
+    "C C"
+  ],
+  "result": {
+    "count": 1,
+    "id": "examplemod:inscribing_table"
+  }
+}

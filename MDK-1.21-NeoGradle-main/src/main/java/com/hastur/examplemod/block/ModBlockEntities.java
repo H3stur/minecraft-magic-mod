@@ -16,6 +16,10 @@ public class ModBlockEntities {
             BLOCK_ENTITY_TYPES.register("rune_pedestal_entity", () -> new BlockEntityType<>(
                     RunePedestalBlockEntity::new, ModBlocks.RUNE_PEDESTAL.get()
             ));
+    public static final Supplier<BlockEntityType<RunePedestalBlockEntity>> INSCRIBING_TABLE_ENTITY =
+            BLOCK_ENTITY_TYPES.register("inscribing_table_entity", () -> new BlockEntityType<>(
+                    RunePedestalBlockEntity::new, ModBlocks.INSCRIBING_TABLE.get()
+            ));
 
     public static void register(IEventBus eventBus){
         BLOCK_ENTITY_TYPES.register(eventBus);
