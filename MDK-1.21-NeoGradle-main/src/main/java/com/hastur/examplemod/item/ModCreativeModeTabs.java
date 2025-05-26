@@ -17,9 +17,9 @@ public class ModCreativeModeTabs {
 			DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ExampleMod.MODID);
 	
 	
-	public static final Supplier<CreativeModeTab> PRAECONIS_ITEMS_TAB = CREATIVE_MODE_TAB.register("praeconis_items_tab",
+	public static final Supplier<CreativeModeTab> HERMETICISM_ITEMS_TAB = CREATIVE_MODE_TAB.register("hermeticism_items_tab",
 			() -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.RAW_CINNABAR.get()))
-					.title(Component.translatable("creativetab.examplemod.praeconis_items"))
+					.title(Component.translatable("creativetab.examplemod.hermeticism_items"))
 					.displayItems((itemDisplayParameters, output) -> {
 						output.accept(ModItems.MERCURY);
 						output.accept(ModItems.RAW_CINNABAR);
@@ -35,9 +35,9 @@ public class ModCreativeModeTabs {
 						
 			}).build());
 	
-	public static final Supplier<CreativeModeTab> PRAECONIS_BLOCKS_TAB = CREATIVE_MODE_TAB.register("praeconis_blocks_tab",
+	public static final Supplier<CreativeModeTab> HERMETICISM_BLOCKS_TAB = CREATIVE_MODE_TAB.register("hermeticism_blocks_tab",
 			() -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.CINNABAR_ORE.get()))
-					.title(Component.translatable("creativetab.examplemod.praeconis_blocks"))
+					.title(Component.translatable("creativetab.examplemod.hermeticism_blocks"))
 					.displayItems((itemDisplayParameters, output) -> {
 						output.accept(ModBlocks.CINNABAR_ORE);
 						output.accept(ModBlocks.DEEPSLATE_CINNABAR_ORE);
