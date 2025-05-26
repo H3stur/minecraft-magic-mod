@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+
 	"texture_size": [64, 64],
 	"textures": {
 		"0": "examplemod:block/inscribing_table",
@@ -84,6 +85,35 @@
 			}
 		}
 	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, -0.75, 0],
+			"scale": [0.3, 0.3, 0.3]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, -0.75, 0],
+			"scale": [0.3, 0.3, 0.3]
+		},
+		"firstperson_righthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_lefthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"ground": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"gui": {
+			"rotation": [-165, -140, -180],
+			"translation": [0.25, -1, 0],
+			"scale": [0.65, 0.65, 0.65]
+		},
+		"fixed": {
+			"rotation": [-25.35, 59.42, 2.14],
+			"translation": [0, -1.25, 0.25],
+			"scale": [0.85, 0.85, 0.85]
+		}
+	},
 	"groups": [
 		{
 			"name": "group",
