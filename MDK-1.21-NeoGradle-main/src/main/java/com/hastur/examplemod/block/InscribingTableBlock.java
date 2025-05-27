@@ -64,10 +64,10 @@ public class InscribingTableBlock extends BaseEntityBlock {
 
     @Override
     protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-        if(level.getBlockEntity(pos) instanceof InscribingTableBlockEntity inscribingTableBlockEntity) {
-            ((ServerPlayer) player).openMenu(new SimpleMenuProvider(inscribingTableBlockEntity, Component.literal("inscribing_Table")), pos);
-            return InteractionResult.PASS;
-        }
+        //if(level.getBlockEntity(pos) instanceof InscribingTableBlockEntity inscribingTableBlockEntity) {
+        //    ((ServerPlayer) player).openMenu(new SimpleMenuProvider(inscribingTableBlockEntity, Component.literal("inscribing_Table")), pos);
+        //    return InteractionResult.PASS;
+        //}
         return InteractionResult.PASS;
     }
 }
